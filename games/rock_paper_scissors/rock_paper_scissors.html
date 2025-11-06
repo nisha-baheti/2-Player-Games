@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="rock_paper_scissors.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✊ Rock Paper Scissors ✂️</h1>
+    <p class="subtitle">A classic 2-player game</p>
+
+    <div class="player player1">
+      <h2>Player 1</h2>
+      <p class="score">Score: <span id="score1">0</span></p>
+      <button onclick="play(1, 'rock')">Rock</button>
+      <button onclick="play(1, 'paper')">Paper</button>
+      <button onclick="play(1, 'scissors')">Scissors</button>
+    </div>
+
+    <div class="player player2">
+      <h2>Player 2</h2>
+      <p class="score">Score: <span id="score2">0</span></p>
+      <button onclick="play(2, 'rock')">Rock</button>
+      <button onclick="play(2, 'paper')">Paper</button>
+      <button onclick="play(2, 'scissors')">Scissors</button>
+    </div>
+
+    <div class="controls">
+      <button onclick="resetGame()">Reset Scores</button>
+    </div>
+
+    <div class="status" id="status">
+      Player 1 and Player 2: Choose your moves!
+    </div>
+  </div>
+  <script src="rock_paper_scissors.js"></script>
+</body>
+</html>

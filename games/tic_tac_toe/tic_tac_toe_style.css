@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+html,body {
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    margin: 0 0 15px;
+}
+
+.container {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    background: rgba(255, 255, 255, 0.1);
+    height: 58vmin;
+    width: 58vmin;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    gap: 1vmin;
+    border-radius: 1rem;
+    border: none;
+    padding : 4vmin;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgb(0,0,0,0.3);
+    font-size: 8vmin;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#reset-btn, #newgame-btn, #back-btn{
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 1rem rgb(0,0,0,0.3);
+}
+
+#reset-btn, #newgame-btn {
+    margin-right: 30px;
+}
+
+#msg {
+    font-size: 5vmin;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vmin;
+}
+
+.hide {
+    display: none;
+}
+
+#reset-btn:hover, #newgame-btn:hover, #back-btn:hover{
+    background: #42a5f5;
+    transform: scale(1.05);
+}

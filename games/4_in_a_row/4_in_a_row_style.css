@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+html,body {
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.game {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    background: rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1vmin;
+    border-radius: 1rem;
+    border: none;
+    padding : 4vmin;
+    box-sizing: border-box;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1vmin;
+    align-items: center;
+    justify-content: flex-start;
+    width: 9vmin;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    height: 9vmin;
+    width: 9vmin;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 1rem rgb(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.player1 {
+    background: #FFD700;
+}
+
+.player2 {
+    background: #00E5FF;
+}
+
+.win {
+    box-shadow: 0 0 0.5rem #fff;
+}
+
+#reset-btn, #newgame-btn, #back-btn{
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 1rem rgb(0,0,0,0.3);
+    margin-top: 1rem;
+}
+
+#reset-btn:hover, #newgame-btn:hover, #back-btn:hover {
+    background: #42a5f5;
+    transform: scale(1.05);
+}
+
+#reset-btn, #newgame-btn {
+    margin-right: 30px;
+}
+
+#msg {
+    font-size: 5vmin;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vmin;
+}
+
+.hide {
+    display: none;
+}
