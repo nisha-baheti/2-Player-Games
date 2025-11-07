@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Memory Card Game - 2 Players</title>
-  <link rel="stylesheet" href="memory-game-1.css">
+  <title>✨🎮 4 in a Row (9x8) 🎮✨</title>
+  <link rel="stylesheet" href="4_in_a_row_hard.css">
 </head>
 <body>
   <div class="game-container">
-    <h1>✨🎮 Memory Card Game (4x4) 🎮✨</h1>
+    <h1>✨🎮 4 in a Row 🎮✨</h1>
+
     <div class="scoreboard">
       <div id="player1" class="player active">Player 1: <span id="score1">0</span></div>
       <div id="player2" class="player">Player 2: <span id="score2">0</span></div>
     </div>
-    <div class="grid" id="game-grid"></div>
+
+    <div class="board" id="board"></div>
+
     <div class="controls">
-      <button class="btn" onclick="resetScores()">Reset Scores</button>
-      <button class="btn" onclick="resetGame()">New Game</button>
+      <button class="btn" id="reset-btn">New Game</button>
+      <button class="btn" id="reset-scores-btn">Reset Scores</button>
     </div>
-    <div class="winner" id="winner"></div>
+
+    <div class="msg-container" id="message"></div>
   </div>
-  <script src="memory-game-1.js"></script>
+
+  <script src="4_in_a_row_hard.js"></script>
 </body>
 </html>

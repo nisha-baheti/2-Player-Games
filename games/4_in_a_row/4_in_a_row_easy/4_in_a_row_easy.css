@@ -1,0 +1,150 @@
+/* General page layout (centered like your Memory Game) */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Game box */
+.game-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  max-width: 750px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.player {
+  padding: 5px 15px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.player.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.cell.player1 {
+  background: radial-gradient(circle at center, #6d5dfc, #432fb3);
+  box-shadow: 0 0 8px rgba(109, 93, 252, 0.4);
+}
+
+.cell.player2 {
+  background: radial-gradient(circle at center, #9057e4, #2b034f);
+  box-shadow: 0 0 8px rgba(167, 109, 252, 0.4);
+}
+
+/* Board — smaller, balanced with Memory Game */
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  grid-template-rows: repeat(6, 60px);
+  gap: 8px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px auto 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* Player discs */
+.player1 {
+  background-color: #ffd166;
+  box-shadow: 0 0 15px #ffd166;
+}
+
+.player2 {
+  background-color: #06d6a0;
+  box-shadow: 0 0 15px #06d6a0;
+}
+
+/* Controls */
+.controls {
+  margin-top: 15px;
+}
+
+.btn {
+  background: #2196f3;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #42a5f5;
+  transform: scale(1.05);
+}
+
+/* Message */
+#message {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(7, 45px);
+    grid-template-rows: repeat(6, 45px);
+    gap: 6px;
+  }
+  .cell {
+    width: 45px;
+    height: 45px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
