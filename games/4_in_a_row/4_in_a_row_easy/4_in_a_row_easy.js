@@ -7,12 +7,22 @@ let gameOver = false;
 let scores = { 1: 0, 2: 0 };
 
 const boardEl = document.getElementById("board");
-const msgEl = document.getElementById("message");
 const player1El = document.getElementById("player1");
 const player2El = document.getElementById("player2");
 const score1El = document.getElementById("score1");
 const score2El = document.getElementById("score2");
+const msg = document.getElementById("msg");
+const msg_container = document.querySelector(".msg-container");
 
+function showWinner() {
+  msg_container.classList.remove("hide");
+  setTimeout(() => {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  }, 50);
+}
 // --- Create Board ---
 function createBoard() {
   board = Array.from({ length: rows }, () => Array(cols).fill(0));
@@ -44,12 +54,14 @@ function handleMove(col) {
       board[r][col] = currentPlayer;
       updateBoardUI();
       if (checkWin(r, col)) {
-        msgEl.textContent = `🎉 Player ${currentPlayer} Wins! 🎉`;
+        msg.innerText = `🎉 Player ${currentPlayer} Wins! 🎉`;
         scores[currentPlayer]++;
         updateScores();
+        showWinner();
         gameOver = true;
       } else if (isBoardFull()) {
-        msgEl.textContent = "😅 It's a Draw!";
+        msg.innerText = "😅 It's a Draw!";
+        showWinner();
         gameOver = true;
       } else {
         switchPlayer();
@@ -132,12 +144,27 @@ function updateScores() {
 }
 
 // --- Reset Game ---
-document.getElementById("reset-btn").addEventListener("click", createBoard);
+document.getElementById("newgame-btn").addEventListener("click", ()=>{
+  msg_container.classList.add("hide");
+  msg.innerText="";
 
-// --- Reset Scores ---
-document.getElementById("reset-scores-btn").addEventListener("click", () => {
+  gameOver = false;
+  currentPlayer = 1;
+  updateTurnDisplay();
+  createBoard();
+});
+
+document.getElementById("reset-btn").addEventListener("click", () => {
   scores = { 1: 0, 2: 0 };
   updateScores();
+
+  msg_container.classList.add("hide");
+  msg.innerText="";
+  
+  gameOver = false;
+  currentPlayer = 1;
+  updateTurnDisplay();
+
   createBoard();
 });
 

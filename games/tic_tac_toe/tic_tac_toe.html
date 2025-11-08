@@ -11,17 +11,21 @@
     <body>
         <div class="msg-container hide">
             <p id="msg">Winner</p>
-            <div class="btn">
-                <button id="newgame-btn">New Game</button>
+            <div>
+                <button class="btn" id="newgame-btn">New Game</button>
                 <a href="../../index.html">
-                    <button id="back-btn">Back</button>
+                    <button class="btn">Back</button>
                 </a>
                 
             </div>
         </div>
         <main>
-            <h1>❌TIC-TAC-TOE⭕</h1>
-            
+            <div class="game-container">
+            <h1>✨🎮TIC-TAC-TOE🎮✨</h1>
+            <div class="scoreboard">
+                <div id="player1" class="player active">Player 1: <span id="score1">0</span></div>
+                <div id="player2" class="player">Player 2: <span id="score2">0</span></div>
+            </div>
             <div class="container">
                 <div class="game">
                     <button class="box"></button>
@@ -35,11 +39,12 @@
                     <button class="box"></button>
                 </div>
             </div>
-            <div class="btn">
-                <button id="reset-btn">Reset</button>
+            <div>
+                <button id="reset-btn" class="btn">Reset</button>
                 <a href="../../index.html">
-                    <button id="back-btn">Back</button>
+                    <button class="btn">Back</button>
                 </a>
+            </div>
             </div>
             
         </main>   

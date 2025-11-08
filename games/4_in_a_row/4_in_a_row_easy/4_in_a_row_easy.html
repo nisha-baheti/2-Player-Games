@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="4_in_a_row_easy.css">
 </head>
 <body>
+    <div class="msg-container hide">
+      <p id="msg">Winner</p>
+      <div class="btns">
+        <button class="btn" id="newgame-btn" onclick="resetGame()">New Game</button>
+        <a href="../../../index.html">
+            <button class="btn" id="back-btn">Back</button>
+        </a>        
+      </div>
+    </div>
+  <main>
   <div class="game-container">
     <h1>✨🎮 4 in a Row 🎮✨</h1>
 
@@ -18,14 +28,13 @@
     <div class="board" id="board"></div>
 
     <div class="controls">
-      <button class="btn" id="reset-btn">New Game</button>
-      <button class="btn" id="reset-scores-btn">Reset Scores</button>
+      <button class="btn" id="reset-btn">Reset Game</button>
+      <a href="../../../index.html">
+        <button class="btn" id="back-btn">Back</button>
+      </a>
     </div>
-
-    <div class="msg-container" id="message"></div>
   </div>
-
+  </main>
   <script src="4_in_a_row_easy.js"></script>
 </body>
 </html>
-

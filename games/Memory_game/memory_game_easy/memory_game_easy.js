@@ -9,7 +9,29 @@ const score1El = document.getElementById("score1");
 const score2El = document.getElementById("score2");
 const p1El = document.getElementById("player1");
 const p2El = document.getElementById("player2");
-const winnerEl = document.getElementById("winner");
+const msg = document.getElementById("msg");
+const msg_container = document.querySelector(".msg-container");
+
+function checkWinner() {
+  const totalPairs = emojis.length;
+  if (score1 + score2 === totalPairs) {
+    if (score1 > score2) {
+      msg.innerText = "🎉 Player 1 Wins!";
+    } else if (score2 > score1) {
+      msg.innerText = "🎉 Player 2 Wins!";
+    } else {
+      msg.innerText = "🤝 It's a Tie!";
+    }
+    msg_container.classList.remove("hide");
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }, 50);
+
+  }
+}
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -69,19 +91,6 @@ function switchTurn() {
   p2El.classList.toggle("active", playerTurn === 2);
 }
 
-function checkWinner() {
-  const totalPairs = emojis.length;
-  if (score1 + score2 === totalPairs) {
-    if (score1 > score2) {
-      winnerEl.textContent = "🎉 Player 1 Wins!";
-    } else if (score2 > score1) {
-      winnerEl.textContent = "🎉 Player 2 Wins!";
-    } else {
-      winnerEl.textContent = "🤝 It's a Tie!";
-    }
-  }
-}
-
 function resetGame() {
   score1 = 0; score2 = 0;
   score1El.textContent = 0;
@@ -91,16 +100,9 @@ function resetGame() {
   p2El.classList.remove("active");
   firstCard = null;
   lock = false;
-  winnerEl.textContent = "";
+  msg_container.classList.add("hide");
+  msg.innerText="";
   createBoard();
-}
-
-function resetScores() {
-  score1 = 0;
-  score2 = 0;
-  score1El.textContent = 0;
-  score2El.textContent = 0;
-  winnerEl.textContent = "";
 }
 
 resetGame();

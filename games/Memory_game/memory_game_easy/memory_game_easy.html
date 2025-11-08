@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="memory_game_easy.css">
 </head>
 <body>
+  <div class="msg-container hide">
+    <p id="msg">Winner</p>
+    <div class="btns">
+      <button class="btn" id="newgame-btn" onclick="resetGame()">New Game</button>
+      <a href="../../../index.html">
+        <button class="btn" id="back-btn">Back</button>
+      </a>        
+      </div>
+  </div>
+  <main>
   <div class="game-container">
     <h1>✨🎮 Memory Card Game (4x4) 🎮✨</h1>
     <div class="scoreboard">
@@ -15,11 +25,14 @@
     </div>
     <div class="grid" id="game-grid"></div>
     <div class="controls">
-      <button class="btn" onclick="resetScores()">Reset Scores</button>
-      <button class="btn" onclick="resetGame()">New Game</button>
+      <button class="btn" id="reset-btn" onclick="resetGame()">Reset Game</button>
+      <a href="../../../index.html">
+        <button class="btn" id="back-btn">Back</button>
+      </a>
     </div>
     <div class="winner" id="winner"></div>
   </div>
+  </main>
   <script src="memory_game_easy.js"></script>
 </body>
 </html>
